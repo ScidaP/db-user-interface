@@ -10,7 +10,7 @@
             $fila = mysqli_fetch_array($enviarConsulta);
             $_SESSION['usuario'] = $fila['usuario'];
             echo '<div class="redirecting">';
-            echo "<p> Correct username. </p>";
+            echo "<h2> Correct username. </h2>";
             echo "<p> Redirecting...";
             echo "</div>";
             header("refresh:3;url=principal.php");
