@@ -33,44 +33,6 @@
         </a>
     </div>
 </form>';
-	}
-?>
-
-<?php include '../html/head.html';?>
-<?php 
-    echo '<section class="mprincipal">';
-    include '../html/menu.php';
-    include 'funciones.php';
-    echo '<div class="table-container">';
-    ?> 
-        <form action="" method="GET">
-            <div class="input-group my-4 search-input">
-                <input type="text" class="form-control" aria-label="Search" aria-describedby="basic-addon1" placeholder="Search by..." name="search" value="<?php 
-                    if (empty($_GET)) {
-                        echo '';
-                    } else {
-                        echo $_GET['search'];
-                    }
-                ?>"required>
-                <select class="search-select form-select" aria-label="Default select example" name="filtro" required>
-                    <option value="" disabled selected hidden>Select a filter</option>
-                    <option value="usuario">Username</option>
-                    <option value="nombre">First Name</option>
-                    <option value="apellido">Last Name</option>
-                    <option value="id">ID</option>
-                    <option value="tipo_cuenta">Account Level</option>
-                    <option value="mail">Email</option>
-                    <option value="numero">Phone Number</option>
-                </select>
-                <button type="submit" class="btn btn-secondary">
-                    <i class="fas fa-search"></i>
-                </button>
-                <a href="search.php">
-                    <button type="button" class="btn btn-primary mostrar-todo">Show all</button>
-                </a>
-            </div>
-        </form>
-    <?php
     $conectar = conectar();
     $consulta = 'SELECT * FROM usuarios';
     $enviarConsulta = mysqli_query($conectar, $consulta);
@@ -166,5 +128,8 @@
             echo "</div>";
         }
     }
+    include '../html/scripts.html';
+} else {
+    nologin();
+}
 ?>
-<?php include '../html/scripts.html';?>

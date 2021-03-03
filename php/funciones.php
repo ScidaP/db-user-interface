@@ -25,10 +25,12 @@
     }
 
     function nologin() {
+        include '../html/head.html';
         echo '<div class="redirecting">';
         echo "<h2> You didn't log in. Try again. </h2>";
         echo "<p> Redirecting... </p>";
         echo "</div>";
+        include '../html/scripts.html';
         header("refresh:2;url=../index.php");
     }
 ?>
