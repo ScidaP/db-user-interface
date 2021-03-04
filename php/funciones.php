@@ -33,4 +33,16 @@
         include '../html/scripts.html';
         header("refresh:2;url=../index.php");
     }
+
+    function usarCookie($preferencia) {
+        if (!empty($preferencia)) {
+            if ($preferencia == 'moderno') {
+                echo '<link rel="stylesheet" href="../css/pref_moderno.css">';
+            } else if ($preferencia == 'clasico') {
+                echo '<link rel="stylesheet" href="../css/pref_clasico.css">';
+            } else if ($preferencia == 'colorido') {
+                echo '<link rel="stylesheet" href="../css/pref_colorido.css">';
+            }
+        }
+    }
 ?>

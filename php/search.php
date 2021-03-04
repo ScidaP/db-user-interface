@@ -28,8 +28,8 @@
         <button type="submit" class="btn btn-secondary">
             <i class="fas fa-search"></i>
         </button>
-        <a href="search.php">
-            <button type="button" class="btn btn-primary mostrar-todo">Show all</button>
+        <a href="search.php" class="ms-5">
+            <button type="button" class="btn btn-primary">Show all</button>
         </a>
     </div>
 </form>';
@@ -38,9 +38,31 @@
     $enviarConsulta = mysqli_query($conectar, $consulta);
     if (empty($_GET)) {
         if (mysqli_num_rows($enviarConsulta) > 0) {
-            echo "<table>";
+            echo '<table';
+            if (isset($_COOKIE[$_SESSION['usuario']])) {
+                switch ($_COOKIE[$_SESSION['usuario']]) {
+                    case '1':
+                        echo ' style="font-size: 0.6em;">';
+                        break;
+                    case '2':
+                        echo ' style="font-size: 0.8em;">';
+                        break;
+                    case '3':
+                        echo '>';
+                        break;
+                    case '4':
+                        echo ' style="font-size: 1.03em;">';
+                        break;
+                    case '5':
+                        echo ' style="font-size: 1.08em;">';
+                        break;
+                } 
+            } else {
+                echo '>';
+            }
             echo "<tr>";
             echo "<th class=\"th-pref\"> ID </th>";
+            echo "<th class=\"th-pref\"></th>";
             echo "<th class=\"th-pref\"> Username </th>";
             echo "<th class=\"th-pref\"> First Name </th>";
             echo "<th class=\"th-pref\"> Last Name </th>";
@@ -61,6 +83,11 @@
                   <li><a class="dropdown-item" href="eliminar.php?id=' . $fila['id'] . '">Delete User</a></li>
                 </ul>
                 </div></td>';
+                if (!empty($fila['foto'])) {
+                    echo '<td class="td-pref td-foto"><img class="img-db"src="' . $fila['foto'] . '"></td>';
+                } else {
+                    echo "<td class=\"td-pref td-foto\"></td>";
+                }
                 echo '<td class=\"td-pref\">' . $fila['usuario'] . "</td>";
                 echo "<td class=\"td-pref\">" . $fila['nombre'] . "</td>";
                 echo "<td class=\"td-pref\">" . $fila['apellido'] . "</td>";
@@ -77,7 +104,11 @@
     } else {
         $busqueda = $_GET['search'];
         $filtro = $_GET['filtro'];
-        $consultaBusqueda = 'SELECT * FROM usuarios WHERE ' . $filtro . ' like \'%' . $busqueda . '%\'';
+        if ($filtro == 'id') {
+            $consultaBusqueda = 'SELECT * FROM usuarios WHERE id=\'' . $busqueda . '\'';
+        } else {
+            $consultaBusqueda = 'SELECT * FROM usuarios WHERE ' . $filtro . ' like \'%' . $busqueda . '%\'';
+        }
         $enviarConsultaBusqueda = mysqli_query($conectar, $consultaBusqueda);
         $cantidadResultados = mysqli_num_rows($enviarConsultaBusqueda);
         if ($cantidadResultados > 0) {
@@ -86,9 +117,29 @@
             } else {
                 echo '<h2 class="ms-4">' . $cantidadResultados . " results found </h2>";
             }
-            echo "<table>";
+            echo "<table";
+            if (isset($_COOKIE[$_SESSION['usuario']])) {
+                switch ($_COOKIE[$_SESSION['usuario']]) {
+                    case '1':
+                        echo ' style="font-size: 0.6em;">';
+                        break;
+                    case '2':
+                        echo ' style="font-size: 0.8em;">';
+                        break;
+                    case '3':
+                        echo '>';
+                        break;
+                    case '4':
+                        echo ' style="font-size: 1.03em;">';
+                        break;
+                    case '5':
+                        echo ' style="font-size: 1.08em;">';
+                        break;
+                } 
+            }
             echo "<tr>";
             echo "<th class=\"th-pref\"> ID </th>";
+            echo "<th class=\"th-pref\"></th>";
             echo "<th class=\"th-pref\"> Username </th>";
             echo "<th class=\"th-pref\"> First Name </th>";
             echo "<th class=\"th-pref\"> Last Name </th>";
@@ -109,6 +160,11 @@
                   <li><a class="dropdown-item" href="eliminar.php?id=' . $fila['id'] . '">Delete User</a></li>
                 </ul>
                 </div></td>';
+                if (!empty($fila['foto'])) {
+                    echo '<td class="td-pref td-foto"><img class="img-db"src="' . $fila['foto'] . '"></td>';
+                } else {
+                    echo "<td class=\"td-pref td-foto\"></td>";
+                }
                 echo "<td class=\"td-pref\">" . $fila['usuario'] . "</td>";
                 echo "<td class=\"td-pref\">" . $fila['nombre'] . "</td>";
                 echo "<td class=\"td-pref\">" . $fila['apellido'] . "</td>";
