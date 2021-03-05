@@ -18,8 +18,12 @@
             $enviarConsulta = mysqli_query($conexion, $consulta);
             if ($enviarConsulta) {
                 redirecting();
+                # --- Agregar a activity.txt ---
+                $activity = $fecha . ';' . $_SESSION['usuario'] . ';added <b>' . $usuario . '</b> into the database';
+                guardarDatos($activity);
             }
             include '../html/scripts.html';
+
         } else {
             include '../html/head.html';
             echo '<div class="redirecting"><h2> You didn\'t complete the add user form. Try again </h2>';

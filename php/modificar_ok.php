@@ -15,8 +15,16 @@
             $consulta .= 'WHERE ID = ' . $id . ';';
             $consulta = str_replace(", WHERE", " WHERE", $consulta);
             $enviarConsulta = mysqli_query($conectar, $consulta);
+            $obtenerUsuario = 'SELECT usuario FROM usuarios WHERE id=\'' . $id . '\'';
+            $enviarObtenerUsuario = mysqli_query($conectar, $obtenerUsuario);
+            $datos = mysqli_fetch_array($enviarObtenerUsuario);
             if ($enviarConsulta) {
                 redirecting();
+                # --- Agregar a activity.txt ---
+                date_default_timezone_set("America/Argentina/Buenos_Aires");
+                $fecha = date("d-m-Y H:i", time());
+                $activity = $fecha . ';' . $_SESSION['usuario'] . ';modified <b>' . $datos['usuario'] . '</b>\'s data';
+                guardarDatos($activity);
                 include '../html/scripts.html';
             } else {
                 echo '<div class="redirecting">';

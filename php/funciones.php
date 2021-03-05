@@ -45,4 +45,11 @@
             }
         }
     }
+
+    function guardarDatos($a) {
+        $nombreArchivo = '../activity/activity.txt';
+        $archivo = fopen($nombreArchivo, 'a+');
+        fputs($archivo, $a . PHP_EOL);
+        fclose($archivo);
+    }
 ?>

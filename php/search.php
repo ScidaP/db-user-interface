@@ -5,7 +5,7 @@
         include '../html/head.html';
         echo '<section class="mprincipal">';
         include '../html/menu.php';
-        echo '<div class="table-container">';
+        echo '<div class="searchpage-container">';
         echo '        <form action="" method="GET">
         <div class="input-group my-4 search-input">
         <input type="text" class="form-control" aria-label="Search" aria-describedby="basic-addon1" placeholder="Search by..." name="search" value="';
@@ -38,7 +38,8 @@
     $enviarConsulta = mysqli_query($conectar, $consulta);
     if (empty($_GET)) {
         if (mysqli_num_rows($enviarConsulta) > 0) {
-            echo '<table';
+            echo '<div class="table-container">';
+            echo '<table class="search-table" ';
             if (isset($_COOKIE[$_SESSION['usuario']])) {
                 switch ($_COOKIE[$_SESSION['usuario']]) {
                     case '1':
@@ -99,6 +100,7 @@
             }
             echo '</table>';
             echo '</div>';
+            echo '</div>';
             echo '</section>';
         }
     } else {
@@ -117,7 +119,8 @@
             } else {
                 echo '<h2 class="ms-4">' . $cantidadResultados . " results found </h2>";
             }
-            echo "<table";
+            echo '<div class="table-container">';
+            echo '<table class="search-table" ';
             if (isset($_COOKIE[$_SESSION['usuario']])) {
                 switch ($_COOKIE[$_SESSION['usuario']]) {
                     case '1':
@@ -175,6 +178,7 @@
                 echo "</tr>";
             }
             echo '</table>';
+            echo '</div>';
             echo '</div>';
             echo '</section>';
         } else {

@@ -26,7 +26,7 @@
       <li><a href="search.php"><i class="fab fa-searchengin"></i>Search</a></li>
       <li><a href="cambiarpass.php"><i class="fas fa-cog"></i>Change Password</a></li>
       <li><a href="preferencias.php"><i class="fas fa-angle-double-right"></i>Preferences</a></li>
-      <li><a href="#"><i class="fas fa-chart-line"></i>Statistics</a></li>
+      <li><a href="activity.php"><i class="fas fa-chart-line"></i>Activity</a></li>
     </ul>
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">

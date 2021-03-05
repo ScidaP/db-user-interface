@@ -5,11 +5,19 @@
         include '../html/head.html';
         if (!empty($_POST)) {
             $id = $_POST['id'];
-            $consulta = 'DELETE FROM usuarios WHERE id=\'' . $id . '\'';
             $conexion = conectar();
+            $obtenerUsuario = 'SELECT usuario FROM usuarios WHERE id=\'' . $id . '\'';
+            $enviarObtenerUsuario = mysqli_query($conexion, $obtenerUsuario);
+            $datos = mysqli_fetch_array($enviarObtenerUsuario);
+            $consulta = 'DELETE FROM usuarios WHERE id=\'' . $id . '\'';
             $enviarConsulta = mysqli_query($conexion, $consulta);
             if ($enviarConsulta) {
                 redirecting();
+                # --- Agregar a activity.txt ---
+                date_default_timezone_set("America/Argentina/Buenos_Aires");
+                $fecha = date("d-m-Y H:i", time());
+                $activity = $fecha . ';' . $_SESSION['usuario'] . ';deleted <b>' . $datos['usuario'] . '</b> from the database';
+                guardarDatos($activity);
             } else {
                 echo '<div class="redirecting">';
                 echo "<h2> User couldn't be deleted due to an unknown error. </h2>";
