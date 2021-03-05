@@ -256,15 +256,25 @@ form .search-input {
 
 .table-container {
     height: 80vh;
-    overflow: auto;
+    overflow-y: auto;
 }
 
 .activity-table {
-    width: 80vh;
+    width: 60em;
 }
 
 .img-activity {
     border-radius: 50%;
     width: 30px;
     height: 30px;
+}
+
+.active {
+    opacity: 0.6;
+}
+
+.activity-container {
+    margin-top: 4em;
+    width: 100%;
+    height: 80vh;
 }

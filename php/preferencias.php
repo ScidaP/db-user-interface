@@ -7,7 +7,7 @@
         include '../html/menu.php';
         echo '<form action="preferencias_ok.php" class="form-pref mt-5" method="POST">
         <div class="input-group m-4">
-            <p class="fs-3 me-3">Table Font Size</p>
+            <p class="fs-3 me-3">Search Table Font Size</p>
             <span class="input-group-text" id="basic-addon1"><i class="fas fa-plus"></i></span>
             <select class="form-select" aria-label="Default select example" name="table_size">
                 <option value="" disabled selected hidden>Choose table font size</option>

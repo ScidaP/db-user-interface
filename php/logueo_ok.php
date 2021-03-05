@@ -13,7 +13,12 @@
             echo "<h2> Correct username. </h2>";
             echo "<p> Redirecting...";
             echo "</div>";
-            header("refresh:3;url=principal.php");
+            header("refresh:3;url=principal.php");                
+            # --- Agregar a activity.txt ---
+            date_default_timezone_set("America/Argentina/Buenos_Aires");
+            $fecha = date("d-m-Y H:i", time());
+            $activity = $fecha . ';' . $_SESSION['usuario'] . '; logged in';
+            guardarDatos($activity);
         } else {
             echo '<div class="redirecting">';
             echo "<p> Incorrect username or password.</p>";
