@@ -22,8 +22,9 @@
         <button class="btn btn-success iniciar-sesion mb-3" type="submit">Change Password</button>
         <button class="btn btn-primary iniciar-sesion" type="reset">Clear</button>
     </form>';
-    include '../html/scripts.html';
+    include_once '../html/scripts.html';
     } else {
         nologin();
     }
 ?>
+<?php redirect() ?>

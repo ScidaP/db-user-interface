@@ -74,22 +74,23 @@
                 </a>
             </form>
         </section>';
-                include '../html/scripts.html';
+                include_once '../html/scripts.html';
             } else {
-                echo '<div class="redirecting">';
+                echo '<div id="error" class="redirecting nomodify">';
                 echo "<h2> Error: user doesn't exist. Try again.</h2>";
                 echo "<p> Redirecting... </p>";
                 echo '</div>';
-                header("refresh:2;url=search.php");
+                include_once '../html/scripts.html';
             }
         } else {
-            echo '<div class="redirecting">';
+            echo '<div id="error" class="redirecting nomodify">';
             echo "<h2> Error: you didn't select any user. Try again.</h2>";
             echo "<p> Redirecting... </p>";
             echo '</div>';
-            header("refresh:2;url=search.php");
+            include_once '../html/scripts.html';
         }
     } else {
         nologin();
     }
 ?>
+<?php redirect() ?>

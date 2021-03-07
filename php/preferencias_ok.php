@@ -20,11 +20,12 @@
             if ($crearCookie) {
                 redirecting();
             } else {
-                echo '<div class="redirecting"><h2>An unknown error occurred. Try again. </h2><p>Redirecting...</p></div>';
-                header("refresh:2;url=principal.php");
+                echo '<div id="error" class="redirecting nopref"><h2>An unknown error occurred. Try again. </h2><p>Redirecting...</p></div>';
+                include_once '../html/scripts.html';
             }
         }
     } else {
         nologin();
     }
 ?>
+<?php redirect() ?>

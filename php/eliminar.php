@@ -46,18 +46,19 @@
                     <a href="search.php" class="go-back ms-5"><button class="btn btn-primary delete-button" type="button">Go back</button></a></div>';
                 echo '</section>';
             } else {
-                echo '<div class="redirecting">';
+                echo '<div id="error" class="redirecting nodelete">';
                 echo "<h2> Error: user doesn't exist. Try again.</h2>";
                 echo "<p> Redirecting... </p>";
-                header("refresh:2;url=search.php");
                 echo '</div>';
+                include_once '../html/scripts.html';
             }
         } else {
-            echo '<div class="redirecting"><h2> You didn\'t select a user to be deleted. Try again </h2>';
+            echo '<div id="error" class="redirecting nodelete"><h2> You didn\'t select a user to be deleted. Try again </h2>';
             echo "<p> Redirecting... </p></div>";
-            header("refresh:2;url=search.php");
+            include_once '../html/scripts.html';
         }
     } else {
         nologin();
     }
 ?>
+<?php redirect() ?>

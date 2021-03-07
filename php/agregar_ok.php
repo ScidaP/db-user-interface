@@ -13,7 +13,8 @@
             $mail = $_POST['mail'];
             $fecha = date("d-m-Y H:i", time());
             $numero = $_POST['numero'];
-            $consulta = "INSERT INTO usuarios(usuario, pass, nombre, apellido, tipo_cuenta, mail, fecha_cuenta, numero) VALUES ('$usuario', '$pass', '$nombre', '$apellido', '$tipo', '$mail', '$fecha', '$numero')";
+            $foto = '../profilepics/img1.png';
+            $consulta = "INSERT INTO usuarios(usuario, pass, nombre, apellido, tipo_cuenta, mail, fecha_cuenta, numero, foto) VALUES ('$usuario', '$pass', '$nombre', '$apellido', '$tipo', '$mail', '$fecha', '$numero', '$foto')";
             $conexion = conectar();
             $enviarConsulta = mysqli_query($conexion, $consulta);
             if ($enviarConsulta) {
@@ -26,12 +27,12 @@
 
         } else {
             include '../html/head.html';
-            echo '<div class="redirecting"><h2> You didn\'t complete the add user form. Try again </h2>';
+            echo '<div id="error" class="redirecting agregar"><h2> You didn\'t complete the add user form. Try again </h2>';
             echo "<p> Redirecting... </p></div>";
-            include '../html/scripts.html';
-            header("refresh:2;url=agregar.php");
+            include_once '../html/scripts.html';
         }
     } else {
         nologin();
     }
 ?>
+<?php redirect() ?>

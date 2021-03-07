@@ -92,3 +92,4 @@
         nologin();
     }
 ?>
+<?php redirect() ?>

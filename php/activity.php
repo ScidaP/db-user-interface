@@ -29,8 +29,9 @@
         echo '</table>';
         echo '</div>';
         echo '</section>';
-        include '../html/scripts.html';
+        include_once '../html/scripts.html';
     } else {
         nologin();
     }
 ?>
+<?php redirect() ?>

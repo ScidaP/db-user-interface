@@ -50,8 +50,9 @@
         <button class="btn btn-secondary iniciar-sesion" type="reset">Clear</button>
     </form>
 </section>';
-        include '../html/scripts.html';
+        include_once '../html/scripts.html';
     } else {
         nologin();
     }
 ?>
+<?php redirect() ?>

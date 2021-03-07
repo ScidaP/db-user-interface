@@ -16,37 +16,33 @@
                         if ($consultaCambiarPass) {
                             redirecting();
                         } else {
-                            echo '<div class="redirecting"><h2> An unknown error occurred. Try again. </h2><p>
+                            echo '<div id="error" class="redirecting cambiarpass"><h2> An unknown error occurred. Try again. </h2><p>
                             Redirecting... </p>';
                             echo '</div>';
-                            header("refresh:2;url=cambiarpass.php");
                         }
                     } else {
-                        echo '<div class="redirecting"><h2>Passwords don\'t match. Try again.</p>';
+                        echo '<div id="error" class="redirecting cambiarpass"><h2>Passwords don\'t match. Try again.</p>';
                         echo "<p>Redirecting... </p>'";
                         echo '</div>';
-                        header("refresh:2;url=cambiarpass.php");
                     }
                 } else {
-                    echo '<div class="redirecting"><h2>Old password is incorrect. Try again.</p>';
+                    echo '<div id="error" class="redirecting cambiarpass"><h2>Old password is incorrect. Try again.</p>';
                     echo "<p>Redirecting... </p>'";
                     echo '</div>';
-                    header("refresh:2;url=cambiarpass.php");
                 }
             } else {
-                echo '<div class="redirecting"><h2> An unknown error occurred. Try again. </h2><p>
+                echo '<div id="error" class="redirecting cambiarpass"><h2> An unknown error occurred. Try again. </h2><p>
                 Redirecting... </p>';
                 echo '</div>';
-                header("refresh:2;url=cambiarpass.php");
             }
         } else {
-            echo '<div class="redirecting"><h2> You didn\'t fill password change form. Try again. </h2><p>
+            echo '<div id="error" class="redirecting cambiarpass"><h2> You didn\'t fill password change form. Try again. </h2><p>
             Redirecting... </p>';
             echo '</div>';
-            header("refresh:2;url=cambiarpass.php");
         }
     } else {
         nologin();
     }
 ?>
-<?php include '../html/scripts.html';?>
+<?php include_once '../html/scripts.html';?>
+<?php redirect() ?>

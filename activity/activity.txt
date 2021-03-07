@@ -26,3 +26,41 @@
 05-03-2021 19:32;pato; logged out
 05-03-2021 19:33;pato; logged in
 05-03-2021 19:54;pato;deleted <b>billgates92</b> from the database
+05-03-2021 20:54;pato; logged out
+05-03-2021 20:54;test; logged in
+05-03-2021 20:54;test; logged out
+06-03-2021 10:29;test; logged in
+06-03-2021 10:30;test; logged out
+06-03-2021 10:32;test; logged in
+06-03-2021 10:35;test; logged out
+06-03-2021 11:54;test; logged in
+06-03-2021 11:57;test; logged out
+06-03-2021 11:59;test; logged in
+06-03-2021 12:06;test; logged in
+06-03-2021 12:06;test; logged out
+06-03-2021 12:15;pato; logged in
+06-03-2021 12:16;pato;added <b>andresc</b> into the database
+06-03-2021 12:18;pato;modified <b>fcdgrty</b>'s data
+06-03-2021 12:18;pato;deleted <b>davidjhonson</b> from the database
+06-03-2021 12:19;pato; logged out
+06-03-2021 12:20;test; logged in
+06-03-2021 16:59;test; logged in
+06-03-2021 17:00;test;modified <b>leopete</b>'s data
+06-03-2021 22:33;test; logged in
+06-03-2021 22:36;test;added <b>rubensc</b> into the database
+06-03-2021 22:38;test; logged out
+06-03-2021 22:38;pato; logged in
+06-03-2021 22:56;pato; logged out
+06-03-2021 22:58;test; logged in
+06-03-2021 22:58;test;added <b>testingpage</b> into the database
+06-03-2021 22:59;test;modified <b>patrik999</b>'s data
+06-03-2021 22:59;test;deleted <b>patrik999</b> from the database
+06-03-2021 23:00;test; logged out
+06-03-2021 23:00;test; logged in
+06-03-2021 23:01;test;added <b>testing</b> into the database
+06-03-2021 23:04;test; logged out
+06-03-2021 23:04;test; logged in
+06-03-2021 23:04;test;added <b>michael11</b> into the database
+06-03-2021 23:05;test;modified <b>michael11</b>'s data
+06-03-2021 23:05;test;deleted <b>michael11</b> from the database
+06-03-2021 23:06;test; logged out

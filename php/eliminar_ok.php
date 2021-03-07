@@ -19,20 +19,21 @@
                 $activity = $fecha . ';' . $_SESSION['usuario'] . ';deleted <b>' . $datos['usuario'] . '</b> from the database';
                 guardarDatos($activity);
             } else {
-                echo '<div class="redirecting">';
+                echo '<div id="error" class="redirecting nodelete">';
                 echo "<h2> User couldn't be deleted due to an unknown error. </h2>";
                 echo "<p> Try again later. </p>";
                 echo '</div>';
-                header("refresh:2;url=search.php");
+                include_once '../html/scripts.html';
             }
         } else {
-            echo '<div class="redirecting">';
+            echo '<div id="error" class="redirecting nodelete">';
             echo "<h2> Error. Try again. </h2>";
             echo "<p> Redirecting... </p>";
             echo '</div>';
-            header("refresh:2;url=search.php");
+            include_once '../html/scripts.html';
         }
     } else {
         nologin();
     }
 ?>
+<?php redirect() ?>

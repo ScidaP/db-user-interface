@@ -21,10 +21,9 @@
                 </div>
             </article>
         </section>';
-        include '../html/scripts.html';
+        include_once '../html/scripts.html';
     } else {
-        include '../html/head.html';
         nologin();
-        include '../html/scripts.html';
     }
 ?>
+<?php redirect() ?>

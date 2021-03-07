@@ -8,14 +8,14 @@
         $fecha = date("d-m-Y H:i", time());
         $activity = $fecha . ';' . $_SESSION['usuario'] . '; logged out';
         guardarDatos($activity);
-        echo '<div class="redirecting">';
+        echo '<div id="error" class="redirecting logout">';
         echo '<h2>You\'re logging out</h2>';
         session_destroy();
-        header('refresh:3;url=../index.php');
         echo '<p> Redirecting... </p>';
         echo '</div>';
     } else {
         nologin();
     }
-    include '../html/scripts.html';
+    include_once '../html/scripts.html';
 ?>
+<?php redirect() ?>

@@ -25,23 +25,24 @@
                 $fecha = date("d-m-Y H:i", time());
                 $activity = $fecha . ';' . $_SESSION['usuario'] . ';modified <b>' . $datos['usuario'] . '</b>\'s data';
                 guardarDatos($activity);
-                include '../html/scripts.html';
+                include_once '../html/scripts.html';
             } else {
-                echo '<div class="redirecting">';
+                echo '<div id="error" class="redirecting nomodify">';
                 echo "<h2> Unknown error: couldn't modify user data. Try again. </h2>";
                 echo "<p> Redirecting... </p>";
                 echo '</div>';
-                header("refresh:2;url=search.php");
+                include_once '../html/scripts.html';
             }
         } else {
             include '../html/head.html';
-            echo '<div class="redirecting">';
+            echo '<div id="error" class="redirecting nomodify">';
             echo "<h2> You didn't send the form. Try again.</h2>";
             echo "<p> Redirecting... </p>";
             echo '</div>';
-            header("refresh:2;url=search.php");
+            include_once '../html/scripts.html';
         }
     } else {
         nologin();
     }
 ?>
+<?php redirect() ?>

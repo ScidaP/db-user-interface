@@ -17,33 +17,20 @@
     }
 
     function redirecting() {
-        echo '<div class="redirecting">';
+        echo '<div id="error" class="redirecting search">';
         echo "<h2> Changes saved successfully. </h2>";
         echo "<p> Redirecting... </p>";
         echo "</div>";
-        header("refresh:2;url=search.php");
+        include_once '../html/scripts.html';
     }
 
     function nologin() {
         include '../html/head.html';
-        echo '<div class="redirecting">';
+        echo '<div id="error" class="redirecting nologin">';
         echo "<h2> You didn't log in. Try again. </h2>";
         echo "<p> Redirecting... </p>";
         echo "</div>";
-        include '../html/scripts.html';
-        header("refresh:2;url=../index.php");
-    }
-
-    function usarCookie($preferencia) {
-        if (!empty($preferencia)) {
-            if ($preferencia == 'moderno') {
-                echo '<link rel="stylesheet" href="../css/pref_moderno.css">';
-            } else if ($preferencia == 'clasico') {
-                echo '<link rel="stylesheet" href="../css/pref_clasico.css">';
-            } else if ($preferencia == 'colorido') {
-                echo '<link rel="stylesheet" href="../css/pref_colorido.css">';
-            }
-        }
+        include_once '../html/scripts.html';
     }
 
     function guardarDatos($a) {
@@ -51,5 +38,12 @@
         $archivo = fopen($nombreArchivo, 'a+');
         fputs($archivo, $a . PHP_EOL);
         fclose($archivo);
+    }
+
+    function redirect() {
+        echo '<script type="text/javascript">
+        $error = document.getElementById("error");
+        nombreClase($error);
+        </script>';
     }
 ?>
