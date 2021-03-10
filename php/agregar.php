@@ -21,24 +21,8 @@
             if (empty($errorUsername) && empty($errorPass) && empty($errorMail) && empty($errorNumero)) {
                 $pass = sha1($pass);
                 $conectar = conectar();
-                $usuarioIgual = 'SELECT usuario FROM usuarios';
-                $enviarUsuarioigual = mysqli_query($conectar, $usuarioIgual);
-                $usuariosIguales = false;
-                while ($usuarios = mysqli_fetch_array($enviarUsuarioigual)) {
-                    if ($usuarios['usuario'] == $usuario) {
-                        $usuariosIguales = true;
-                    }
-                }
-                if (!$usuariosIguales) {
-                    $consulta = "INSERT INTO usuarios(usuario, pass, nombre, apellido, tipo_cuenta, mail, fecha_cuenta, numero, foto) VALUES ('$usuario', '$pass', '$nombre', '$apellido', '$tipo', '$mail', '$fecha', '$numero', '$foto')";
-                    $conexion = conectar();
-                    $enviarConsulta = mysqli_query($conexion, $consulta);
-                } else {
-                    include_once '../html/head.html';
-                    echo '<div id="error" class="redirecting agregar"><h2> Username already exists. Try again. </h2>';
-                    echo "<p> Redirecting... </p></div>";
-                    include_once '../html/scripts.html';
-                }
+                $consulta = "INSERT INTO usuarios(usuario, pass, nombre, apellido, tipo_cuenta, mail, fecha_cuenta, numero, foto) VALUES ('$usuario', '$pass', '$nombre', '$apellido', '$tipo', '$mail', '$fecha', '$numero', '$foto')";
+                $enviarConsulta = mysqli_query($conectar, $consulta);
                 if ($enviarConsulta) {
                     redirecting();
                     # --- Agregar a activity.txt ---

@@ -96,3 +96,21 @@
 09-03-2021 20:01;craig;deleted <b>patokrak</b> from the database
 09-03-2021 20:01;craig;deleted <b>patocapo</b> from the database
 09-03-2021 20:02;craig; logged out
+10-03-2021 14:26;test; logged in
+10-03-2021 14:39;test;modified <b>pato</b>'s data
+10-03-2021 14:39;test; logged in
+10-03-2021 14:43;test;modified <b>pato</b>'s data
+10-03-2021 14:49;test;modified <b>pato$</b>'s data
+10-03-2021 15:00;test;modified <b>pato</b>'s data
+10-03-2021 15:01;test;modified <b>test</b>'s data
+10-03-2021 15:02;test;modified <b>pato</b>'s data
+10-03-2021 15:07;test; logged in
+10-03-2021 15:14;test;modified <b>pato</b>'s data
+10-03-2021 15:14;test;modified <b>pato</b>'s data
+10-03-2021 15:14;test;modified <b>pato</b>'s data
+10-03-2021 15:15;test;modified <b>pato</b>'s data
+10-03-2021 15:16;test;modified <b>pato</b>'s data
+10-03-2021 15:16;test;modified <b>gweah</b>'s data
+10-03-2021 15:19;test;modified <b>pato</b>'s data
+10-03-2021 15:20;test;modified <b>pato</b>'s data
+10-03-2021 15:24;test;modified <b>pato</b>'s data

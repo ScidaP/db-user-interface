@@ -47,16 +47,28 @@
         </script>';
     }
 
-    function validarUsername($nombre) {
+    function validarUsername($nombrePost, $nombreDB) {
         // Username regex
-        $usernameRegex = '/^[A-Za-z\d]{4,20}$/'; 
-        if (strlen($nombre) < 4) {
+        $usernameRegex = '/^[A-Za-z\d]{4,20}$/';
+        $conectar = conectar();
+        $usuarioIgual = 'SELECT usuario FROM usuarios WHERE usuario != \'' . $nombreDB . '\'';
+        $enviarUsuarioigual = mysqli_query($conectar, $usuarioIgual);
+        $usuariosIguales = false;
+        while ($usuarios = mysqli_fetch_array($enviarUsuarioigual)) {
+            if ($usuarios['usuario'] == $nombrePost) {
+                $usuariosIguales = true;
+            }
+        }
+        if ($usuariosIguales) {
+            return "Username already exists";
+        }
+        if (strlen($nombrePost) < 4) {
             return "Username must have at least 4 characters";
         }
-        if (strlen($nombre) > 20) {
+        if (strlen($nombrePost) > 20) {
             return "Username must have no more than 20 characters";
         }
-        if (!preg_match($usernameRegex, $nombre)) {
+        if (!preg_match($usernameRegex, $nombrePost)) {
             return "Username only accepts letters and numbers";
         }
     }
@@ -75,7 +87,7 @@
     }
 
     function validarMail($mail) {
-        $emailRegex = '/^[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+.[a-zA-Z]{2,4}$/';
+        $emailRegex = '/^[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\.[a-zA-Z]{2,4}$/';
         if (!preg_match($emailRegex, $mail)) {
             return "Email adress is invalid";
         }
@@ -84,7 +96,7 @@
     function validarNumero($numero) {
         $numeroRegex = '/^[\d\+]+$/';
         if (!preg_match($numeroRegex, $numero)) {
-            return "Invalid phone number. Use only numbers and '+'";
+            return "Phone number can only contain numbers and '+'";
         }
     }
 ?>

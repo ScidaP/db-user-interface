@@ -292,3 +292,11 @@ form .search-input {
     color: red;
     font-weight: bold;
 }
+
+.alert {
+    padding: 0.5em 1.2em !important;
+}
+
+.fa-chevron-down {
+    margin-left: 0.5em;
+}
