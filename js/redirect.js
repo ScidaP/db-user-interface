@@ -10,17 +10,14 @@ function nombreClase(elemento) {
         case 'logout':
         case 'nologin':
             ruta = '../index.php';
-            redirect(ruta);
             break;
         case 'nodelete':
         case 'search':
         case 'nomodify':
             ruta = 'search.php';
-            redirect(ruta);
             break;
         case 'agregar':
             ruta = 'agregar.php';
-            redirect(ruta);
             break;
         case 'cambiarpass':
             ruta = 'cambiarpass.php';
@@ -28,7 +25,7 @@ function nombreClase(elemento) {
         case 'login':
         case 'nopref':
             ruta = 'principal.php';
-            redirect(ruta);
             break;
     }
+    redirect(ruta);
 }

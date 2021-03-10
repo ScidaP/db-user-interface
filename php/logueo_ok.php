@@ -1,8 +1,8 @@
 <?php include '../html/head.html';?>
 <?php
     session_start();
+    include 'funciones.php';
     if (!empty($_POST['usuario']) && !empty($_POST['pass'])) {
-        include 'funciones.php';
         $conectar = conectar();
         $consulta = 'SELECT usuario, pass FROM usuarios WHERE usuario=\'' . $_POST['usuario'] . '\' AND pass=\'' . sha1($_POST['pass']) . '\'';
         $enviarConsulta = mysqli_query($conectar, $consulta);
@@ -20,14 +20,14 @@
             guardarDatos($activity);
         } else {
             echo '<div id="error" class="redirecting nologin">';
-            echo "<p> Incorrect username or password.</p>";
+            echo "<h2> Incorrect username or password.</h2>";
             echo "<p> Redirecting... </p>";
             echo '</div>';
             include_once '../html/scripts.html';
         }
     } else {
         echo '<div id="error" class="redirecting nologin">';
-        echo "<p> You didn\'t fill the log in form.</p>";
+        echo "<h2> You didn't fill the log in form.</h2>";
         echo "<p> Redirecting... </p>";
         echo '</div>';
         include_once '../html/scripts.html';

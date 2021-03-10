@@ -46,4 +46,45 @@
         nombreClase($error);
         </script>';
     }
+
+    function validarUsername($nombre) {
+        // Username regex
+        $usernameRegex = '/^[A-Za-z\d]{4,20}$/'; 
+        if (strlen($nombre) < 4) {
+            return "Username must have at least 4 characters";
+        }
+        if (strlen($nombre) > 20) {
+            return "Username must have no more than 20 characters";
+        }
+        if (!preg_match($usernameRegex, $nombre)) {
+            return "Username only accepts letters and numbers";
+        }
+    }
+
+    function validarPassword($pass) {
+        $passwordRegex = '/^[A-Za-z\d]{8,28}$/';
+        if (strlen($pass) < 8) {
+            return "Password must have at least 8 characters";
+        }
+        if (strlen($pass) > 28) {
+            return "Password must have no more than 28 characters";
+        }
+        if (!preg_match($passwordRegex, $pass)) {
+            return "Password can only contain letters, numbers and \$._%";
+        }
+    }
+
+    function validarMail($mail) {
+        $emailRegex = '/^[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+.[a-zA-Z]{2,4}$/';
+        if (!preg_match($emailRegex, $mail)) {
+            return "Email adress is invalid";
+        }
+    }
+
+    function validarNumero($numero) {
+        $numeroRegex = '/^[\d\+]+$/';
+        if (!preg_match($numeroRegex, $numero)) {
+            return "Invalid phone number. Use only numbers and '+'";
+        }
+    }
 ?>

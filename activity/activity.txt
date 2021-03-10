@@ -64,3 +64,35 @@
 06-03-2021 23:05;test;modified <b>michael11</b>'s data
 06-03-2021 23:05;test;deleted <b>michael11</b> from the database
 06-03-2021 23:06;test; logged out
+07-03-2021 11:26;test; logged in
+07-03-2021 11:28;test;modified <b>katy12</b>'s data
+07-03-2021 20:33;test; logged in
+07-03-2021 20:34;test;added <b>test1</b> into the database
+07-03-2021 20:35;test; logged out
+07-03-2021 20:37;pato; logged in
+07-03-2021 20:38;pato;modified <b>seanb</b>'s data
+08-03-2021 22:06;test; logged in
+09-03-2021 16:23;pato; logged in
+09-03-2021 18:02;craig; logged in
+09-03-2021 18:43;craig;added <b>ew</b> into the database
+09-03-2021 18:44;craig;deleted <b>ew</b> from the database
+09-03-2021 19:09;craig; logged in
+09-03-2021 19:17;craig; logged in
+09-03-2021 19:20;craig;added <b>patocapo</b> into the database
+09-03-2021 19:22;craig;added <b>patocapo</b> into the database
+09-03-2021 19:30;craig;added <b>patocapo</b> into the database
+09-03-2021 19:30;craig;deleted <b>patocapo</b> from the database
+09-03-2021 19:30;craig;deleted <b>patocapo</b> from the database
+09-03-2021 19:42;craig;added <b>qweeqwweq</b> into the database
+09-03-2021 19:43;craig;added <b>asdads</b> into the database
+09-03-2021 19:43;craig;deleted <b>asdads</b> from the database
+09-03-2021 19:43;craig;deleted <b>qweeqwweq</b> from the database
+09-03-2021 19:57;craig;added <b>patokrak</b> into the database
+09-03-2021 19:57;craig; logged out
+09-03-2021 19:57;test; logged in
+09-03-2021 19:58;test; logged out
+09-03-2021 20:00;craig; logged in
+09-03-2021 20:00;craig;added <b>eqwewq</b> into the database
+09-03-2021 20:01;craig;deleted <b>patokrak</b> from the database
+09-03-2021 20:01;craig;deleted <b>patocapo</b> from the database
+09-03-2021 20:02;craig; logged out

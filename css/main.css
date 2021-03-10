@@ -287,3 +287,8 @@ form .search-input {
     position: sticky;
     top: 0;
 }
+
+.errorMsg {
+    color: red;
+    font-weight: bold;
+}
