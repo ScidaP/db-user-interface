@@ -12,7 +12,7 @@
             $usuario = $_POST['usuario'];
             $mail = $_POST['mail'];
             $numero = $_POST['numero'];
-            $errorUsername = validarUsername($usuario, $datos['usuario']);
+            $errorUsername = validarUsernameModificar($usuario, $datos['usuario']);
             $errorMail = validarMail($mail);
             $errorNumero = validarNumero($numero);
             if (empty($errorUsername) && empty($errorMail) && empty($errorNumero)) {

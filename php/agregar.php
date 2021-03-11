@@ -14,7 +14,7 @@
             $fecha = date("d-m-Y H:i", time());
             $numero = $_POST['numero'];
             $foto = '../profilepics/img1.png';
-            $errorUsername = validarUsername($usuario);
+            $errorUsername = validarUsernameAgregar($usuario);
             $errorPass = validarPassword($pass);
             $errorMail = validarMail($mail);
             $errorNumero = validarNumero($numero);
@@ -117,6 +117,7 @@
             echo '">';
         }
         echo '</div>
+        <input type="hidden" name="tipopass" value="0">
         <button class="btn btn-primary iniciar-sesion mb-3" type="submit">Add</button>
     </form>
 </section>';
