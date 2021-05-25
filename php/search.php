@@ -43,19 +43,19 @@
             if (isset($_COOKIE[$_SESSION['usuario']])) {
                 switch ($_COOKIE[$_SESSION['usuario']]) {
                     case '1':
-                        echo ' style="font-size: 0.6em;">';
+                        echo ' style="font-size: 0.8em; width: 80%;">';
                         break;
                     case '2':
-                        echo ' style="font-size: 0.8em;">';
+                        echo ' style="font-size: 0.95em; width: 85%;">';
                         break;
                     case '3':
                         echo '>';
                         break;
                     case '4':
-                        echo ' style="font-size: 1.03em;">';
+                        echo ' style="font-size: 1.02em; width: 90%;">';
                         break;
                     case '5':
-                        echo ' style="font-size: 1.08em;">';
+                        echo ' style="font-size: 1.05em; width: 95%;">';
                         break;
                 } 
             } else {

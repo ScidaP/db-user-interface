@@ -300,3 +300,37 @@ form .search-input {
 .fa-chevron-down {
     margin-left: 0.5em;
 }
+
+/******************/
+/* PANTALLAS NO HD*/
+/*****************/
+
+@media screen and (max-width: 1785px) {
+    .search-table {
+        width: 90%;
+    }
+
+    .search-table td, .search-table th {
+        font-size: 0.8em;
+        padding: 0.7em 2.4em;
+    }
+}
+
+@media screen and (max-width: 1620px) {
+    .search-table {
+        width: 80%;
+    }
+    .search-table td, .search-table th {
+        font-size: 0.75em;
+        padding: 0.6em 2.3em;
+    }
+    .nav ul li {
+        font-size: 0.95em;
+    }
+}
+
+@media screen and (max-width: 1492px) {
+    .nav ul li {
+        font-size: 0.9em;
+    }
+}

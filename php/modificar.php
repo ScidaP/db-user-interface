@@ -26,7 +26,7 @@
                 $consulta = str_replace(", WHERE", " WHERE", $consulta);
                 $enviarConsulta = mysqli_query($conectar, $consulta);
                 if ($enviarConsulta) {
-                    redirecting();
+		    redirecting();
                     # --- Agregar a activity.txt ---
                     date_default_timezone_set("America/Argentina/Buenos_Aires");
                     $fecha = date("d-m-Y H:i", time());
